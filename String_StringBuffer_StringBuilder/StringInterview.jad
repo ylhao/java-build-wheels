@@ -1,0 +1,48 @@
+// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   StringInterview.java
+
+package test;
+
+import java.io.PrintStream;
+
+public class StringInterview
+{
+
+    public StringInterview()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        String a1 = "hello2";
+        String b1 = "hello2";
+        System.out.println(a1 == b1);
+        String a2 = "hello2";
+        String b2 = "hello";
+        String c2 = (new StringBuilder(String.valueOf(b2))).append(2).toString();
+        System.out.println(a2 == c2);
+        String a3 = "hello2";
+        String b3 = "hello";
+        String c3 = "hello2";
+        System.out.println(a3 == c3);
+        String a4 = "hello2";
+        String b4 = getHello();
+        String c4 = (new StringBuilder(String.valueOf(b4))).append(2).toString();
+        System.out.println(a4 == c4);
+        String a5 = "hello";
+        String b5 = new String("hello");
+        String c5 = new String("hello");
+        String d5 = b5.intern();
+        System.out.println(a5 == b5);
+        System.out.println(b5 == c5);
+        System.out.println(b5 == d5);
+        System.out.println(a5 == d5);
+    }
+
+    public static String getHello()
+    {
+        return "hello";
+    }
+}
